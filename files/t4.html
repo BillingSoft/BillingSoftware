@@ -1,0 +1,121 @@
+<html>
+<head>
+<style>
+body
+{
+background-image:url('Invoice.jpg');
+background-size:contain;
+}
+
+table
+{
+margin-left:80px;
+border-collapse:collapse;
+font-size:12px;
+font:Arial, Helvetica, sans-serif;
+text-align:start;
+width: 600px;
+}
+table, td, th
+{
+border:1px solid black;
+
+}
+</style>
+</head>
+<body>
+<br/><br/><br/><br/><br/><br/>
+
+<b style='margin-left:300px;'>PURCHASE ORDER</b>
+<font size="1">
+<table>
+<tr>
+<td rowspan="3" width="275px" height="30px" style="font-size:12px">${Sender}</td>
+<td width="150px" height="30px">Invoice No. <br />${prefix}${InvoiceNo}${suffix}</td>
+<td width="150px" height="30px">Dated <br />${Dated}</td>
+</tr>
+<tr>
+<td width="150px" height="30px">Delivery Note <br />${DeliveryNote}</td>
+<td width="150px" height="30px">Mode/Terms of Payment <br />${ModeTOP}</td>
+</tr>
+<tr>
+<td width="150px" height="30px">Suppliers Ref. <br />${SuppliersNote}</td>
+<td width="150px" height="30px">Other References(s) <br />${OtherRef}</td>
+</tr>
+<tr>
+<td rowspan="4" width="275px" height="30px" valign = "top" style="font-size:12px">Buyer<br />${Receiver}</td>
+<td width="150px" height="30px">Buyers Order No. <br />${BuyersOrderNo}</td>
+<td width="150px" height="30px">Dated <br />${DatedBON}</td>
+</tr>
+<tr>
+<td width="150px" height="30px">Despatch Document No. <br />${DespatchDocNo}</td>
+<td width="150px" height="30px">Dated <br />${DatedDDN}</td>
+</tr>
+<tr>
+<td width="150px" height="30px">Despatched Through <br />${DespatchedThrough}</td>
+<td width="150px" height="30px">Destination <br />${Destination}</td>
+</tr>
+<tr>
+<td colspan="2" width="150px" height="50px" valign = "top">Terms Of Delivery <br />${Terms}</td>
+</tr>
+</table>
+
+<table>
+<b>
+<tr>
+<td width="285px" height="28px" align = "center">Description Of Goods</td>
+<td width="70px" height="28px" align = "center">Quantity</td>
+<td width="70px" height="28px" align = "center">Rate</td>
+<td width="50px" height="28px" align = "center">per</td>
+<td width="100px" height="28px" align = "center">Amount</td>
+</tr>
+</b>
+<#list arr as i>
+<tr style="height:15px">
+<td width="285px" >${i.desc}</td>
+<td width="70px" align = "center">${i.qty}</td>
+<td width="70px" align = "center">${i.rate}</td>
+<td width="50px" align = "center">${i.per}</td>
+<td width="100px" align = "right">${i.amt}</td>
+</tr>
+</#list> 
+</table>
+<table>
+<tr>
+<td colspan="3" width="150px" height="15px" style="text-align:right;border-bottom-style:hidden">E. and O.E.</td>
+</tr>
+<tr style="font-size:12px">
+<td width="150px" height="25px" valign = "top" style="border-right-style:hidden">Amount Chargeable(in words): </td>
+<td colspan="2" width="150px" height="25px" valign = "top">${ntw} Only</td>
+</tr>
+<tr>
+<td width="175px" height="15px">Company's VAT TIN: </td>
+<td width="175px" height="15px" style="border-right-style:hidden">${tin}</td>
+<td width="225px" height="15px"></td>
+</tr>
+<tr>
+<td width="175px" height="15px">Company's CST No.: </td>
+<td width="175px" height="15px" style="border-right-style:hidden">${cst}</td>
+<td width="225px" height="15px"></td>
+</tr>
+<tr>
+<td width="175px" height="15px">Buyers VAT TIN/Sales Tax No.: </td>
+<td width="175px" height="15px" style="border-right-style:hidden">${bTin}</td>
+<td width="225px" height="15px"></td>
+</tr>
+<tr>
+<td width="150px" height="65px" colspan="2" rowspan="3" valign = "top">Declaration<br/>We declare that this invoice shows the actual price of goods described and that all particulars are true and correct.</td>
+<td width="300px" height="15px" style="border-bottom-style:hidden; text-align:right"> For ${companyname}</td>
+</tr>
+<tr>
+<td width="300px" height="35px" style="border-bottom-style:hidden"></td>
+</tr>
+<tr>
+<td width="300px" height="15px" style="text-align:right">Authorised Signatory</td>
+</tr>
+</table>
+</font>
+<b style="margin-left:300px; font-size:8px">This Is A Computer Generated Invoice</b>
+
+</body>
+</html>
