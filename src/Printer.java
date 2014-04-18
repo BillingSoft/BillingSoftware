@@ -1,4 +1,4 @@
-/*
+/* 
  * Copyright (c) 2007 Patrick Wright 
  *
  * This program is free software; you can redistribute it and/or
